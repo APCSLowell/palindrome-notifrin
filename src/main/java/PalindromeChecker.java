@@ -1,7 +1,3 @@
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner; // Import the Scanner class to read text files
-
 public class PalindromeChecker {
 public void tester()
 {
@@ -37,13 +33,31 @@ public void tester()
 }
 public boolean palindrome(String word)
 {
-  //your code here
+  String chan = new String();
+ String ratio = new String();
+
+  for(int i =0; i <word.length(); i++) {
+      if(word.substring(i,i+1) != " ")
+      chan += word.substring(i,i+1);
+  }
+
+ for(int i =0; i < chan.length(); i ++) {
+    if(Character.isLetter(chan.charAt(i)))
+    ratio += chan.charAt(i);
+  }
+   ratio = ratio.toLowerCase();
+  if(ratio.equals(reverse(ratio)))
+    return true;
+
+
   return false;
 }
 public String reverse(String str)
 {
-    String sNew = new String();
-    //your code here
-    return sNew;
+    String hello = new String();
+  for(int i = str.length(); i > 0; i--) {
+    hello = hello + str.substring(i-1,i);
+  }
+  return hello;
 }
 }
